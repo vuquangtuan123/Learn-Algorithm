@@ -3,7 +3,7 @@ using namespace std;
 
 void InputArray(int [],int &); // tham chiếu
 void OutputArray(int [] ,int );
-void Swap(int , int);
+void Swap(int &, int &); //tham chiếu
 void SelectionSort(int [],int ); //O(n^2) với mọi trường hợp ,
 /* Trong trường hợp SORT từ NHỎ đến LỚN
 Tìm phần từ nhỏ nhất trong mảng sau đó swap vị trí của phần tử đó với 
@@ -42,7 +42,7 @@ void OutputArray(int a[],int n)
         cout<<a[i]<<" ";
 }
 
-void Swap(int a,int b)
+void Swap(int &a,int &b) // Truyền đối số cho hàm là tham chiếu 
 {
     int temp=a;
     a=b;
@@ -59,6 +59,6 @@ void SelectionSort(int a[],int n) //SORT từ NHỎ đến LỚN
             if(a[j]<a[min])  //NẾU a[j]>a[min]
                 min=j; // gán cho (vị trí) min = (vị trí) j ... rồi quay về vòng for tăng giá trị j xét tiếp
         }
-        swap(a[i],a[min]);  //swap vị trí có giá trị NHỎ NHẤT với vị trí ĐẦU ĐOẠN chưa SẮP XẾP
+        Swap(a[i],a[min]);  //swap vị trí có giá trị NHỎ NHẤT với vị trí ĐẦU ĐOẠN chưa SẮP XẾP
     }
 }
