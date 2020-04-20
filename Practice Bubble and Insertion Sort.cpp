@@ -3,7 +3,7 @@ using namespace std;
 void InputArray(int [],int &);
 void OutputArray(int [],int);
 int ChooseSortType(int);
-void Swap(int,int);
+void Swap(int &,int &);
 void BubbleSort(int [],int );
 void InsertionSort(int[],int );
 
@@ -60,7 +60,7 @@ void OutputArray(int a[],int n)
     }
 }
 
-void Swap(int a,int b)
+void Swap(int &a,int &b) // Truyền vào đối số trong hàm là tham chiếu
 {
     int temp=a;
     a=b;
@@ -74,7 +74,7 @@ void BubbleSort(int a[], int n) //Sort từ NHỞ đến LỚN
         for(int j=0;j<n-1;j++)
         {
             if(a[j]>a[j+1])     // ĐỔI DẤU > thành < để Sort từ LỚN đến NHỎ
-                swap(a[j],a[j+1]);
+                Swap(a[j],a[j+1]);
         }
     }
 }
